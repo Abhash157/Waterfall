@@ -1,0 +1,64 @@
+:root{
+    --lineHeight: calc((50vh) / (9))
+}
+
+body{
+    background: black;
+}
+#waterfall-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 50%;
+    height: 50%;
+    background-color: red;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    border-radius: 2%;
+    padding: 1em;
+}
+  
+
+#waterfall-container span {
+display: block;
+/* width: 100%; */
+position: relative;
+transform: translateX(50%);
+text-transform: uppercase;
+/* background: purple; */
+}
+
+@media only screen and (max-height: 250px) { 
+    #waterfall-container span:nth-of-type(n){
+        padding: 0;
+        text-wrap: wrap;
+    }
+    #waterfall-container{
+        padding: 0;
+        height: 100%;
+    }
+}
+
+@media only screen and (min-width: 720px) { 
+    #waterfall-container span{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    #waterfall-container span:nth-of-type(n){
+        transform: translateY(calc(var(--n) * (var(--lineHeight))));
+    } 
+}
+@media only screen and (max-width: 720px) { 
+    #waterfall-container span{
+        width: 100%;
+    }
+}
+@media only screen and (min-height: 720px) { 
+    #waterfall-container span{
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+    
